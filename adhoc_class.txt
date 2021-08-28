@@ -1,0 +1,96 @@
+Location Based Routing for Mobile AdHoc Network
+-----------------------------------------------
+
+Ad-Hoc network
+--------------
+
+	- network for specific purpose only
+	- temperary Network
+
+Existing System
+---------------
+	- centralized server 
+	- each and every node has to comm/n over the centralized server
+	- if the centralized server is damage, it affect the whole network
+	- no nodes has to comm/n
+
+Proposed System 
+---------------
+	- LAR protocol --> distributed aproach
+	- each and every node act as server as well as a node
+	- hop-by-hop comm/n
+	- one by one node comm/n and finally reach the destination
+	- node damage will affect the whole nw
+
+
+Algorithms
+-----------
+	1. Ring Search Algorithm
+	2. Core Resolution Algorithm
+	3. Tree Creation Algorithm
+
+
+Ring Search Algorithm
+---------------------
+	- route discovery
+
+
+Core Rsolution Algorithm
+------------------------
+	- Core
+	- Recore
+
+Core 
+	- while one node wants to comm/t to another node
+	- it send request to the nearest node
+	- it check whether it is our dest node or not
+	- if it is our dest, it show the msg
+	- else recore the process
+	- find the destination
+
+Recore
+	- choose another node
+
+
+Tree Creation Algorithm
+-----------------------
+	- apply when the route node failure
+
+Note
+-----
+	- static network 
+	- predefined set of nodes
+	- apply the logic to predefined set of nodes
+
+ 
+
+java.net.*
+	- networking package(package - collection of classes and interfaces) 
+	Socket 
+			} --> port number(user defined)	
+	Serversocket 
+
+Socket s = new Socket(ipaddress, port number)
+	eg: Socket s = new Socket("bct-9", 111)
+
+ServerSocket ss = new ServerSocket(111);
+Socket s1 = ss.accept();
+
+comm/n	establish
+
+java.io.*;
+	- input/output stream package
+
+DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+dos.writeUTF("Hai How r u"); // UTF - Unicode Text Format (String by String)
+
+DataInputStream dis = new DataInputStream(s1.getInputStream());
+String s = dis.readUTF();
+
+Steps to Run
+------------
+First Excute Server pgm
+Next Execute client pgm
+if not, thro' connection refused exception
+
+
